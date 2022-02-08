@@ -17,4 +17,8 @@ class ArticleCategoryController extends \yii\web\Controller
         }
         return json_encode($tosend);
     }
+
+    public function actionView($id) {
+        return json_encode(ArticleCategory::find()->where(['id'=>$id])->asArray()->one());
+    }
 }
