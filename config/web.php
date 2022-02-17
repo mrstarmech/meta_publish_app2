@@ -30,7 +30,7 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'cms/error',
+            'errorAction' => 'site/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -66,6 +66,7 @@ $config = [
                 'category/<id:\d+>' => 'site/index',
                 'article/undefined' => 'site/ok',
                 'privacy' => 'site/index',
+                '<controller:pl>/<action:\w+>/<id:.+>' => '<controller>/<action>',
                 '<controller:cms>/<action:\w+>' => '<controller>/<action>',
                 '<controller:cms>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:cms>' => '<controller>',

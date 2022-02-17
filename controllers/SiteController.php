@@ -16,6 +16,10 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionError() {
+        return $this->render('error',['message' => 'Requested page not found on server', 'name'=>'404 Not Found']);
+    }
+
     public function actionOk() {
         return 'ok';
     }
