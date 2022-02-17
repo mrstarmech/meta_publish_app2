@@ -5,7 +5,6 @@ function getParam($name, $default = "")
 {
     return isset($_GET[$name]) ? $_GET[$name] : $default;
 }
-
 $domain      = getParam("domain", "adltkngs.com");
 $clickPhpUrl = "//$domain/click.php";
 $uclick      = getParam('uclick', false);
