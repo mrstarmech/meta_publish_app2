@@ -399,7 +399,7 @@ if ($uclick) $offerLink .= "&uclick=$uclick";
   <script type="text/javascript">
     let trackerUrl = "<?= $clickPhpUrl ?>";
   </script>
-  <script type="text/javascript" src="/umg/1.1.4/ultramagic.js"></script>
+  <script type="text/javascript" src="/umg/1.1.4/ultramagic.min.js"></script>
 </body>
 
 </html>
