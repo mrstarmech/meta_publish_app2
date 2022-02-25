@@ -26,7 +26,9 @@ class PlController extends Controller
     }
 
     public function actionTs($id) {
-        return json_encode(json_decode(file_get_contents("https://rotation-heart.losmetas.team/render/widget/?widget_key=$id"),true)[0]);
+        $resp = json_decode(file_get_contents("https://rotation-heart.losmetas.team/render/widget/?widget_key=$id"),true);
+        shuffle($resp);
+        return json_encode($resp[0]);
     }
 
     public function actionTsg($id) {
