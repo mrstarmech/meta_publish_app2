@@ -2,25 +2,14 @@
 
 namespace app\controllers;
 
-use yii\web\Controller;
+use yii\rest\Controller;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Yii;
 
-class SiteController extends Controller
+class SendController extends Controller
 {
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
-    public function actionIndex($id = 0)
-    {
-        
-        return $this->render('index');
-    }
-
-    public function actionSend() {
+    public function actionGo() {
         if (Yii::$app->request->isPost) {
             include '../src/Exception.php';
             include '../src/PHPMailer.php';
@@ -43,19 +32,12 @@ class SiteController extends Controller
             $mail->setFrom('metaphpmailer@gmail.com', "WhitePageNotify - $sender");
             $mail->Subject = "ModersSecrets";
             $mail->Body = $message;
-            $mail->addAddress('rv@metacpa.ru');
+            $mail->addAddress('mail@annihilan.com');
             $mail->AltBody = 'test omroemroemrom';
-            $mail->Send();
+            $result = $mail->Send();
+            if(!$result) {
+                return $mail->ErrorInfo;
+            }
         }
-    }
-
-    public function actionError()
-    {
-        return $this->render('error', ['message' => 'Requested page not found on server', 'name' => '404 Not Found']);
-    }
-
-    public function actionOk()
-    {
-        return 'ok';
     }
 }
