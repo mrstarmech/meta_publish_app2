@@ -5,7 +5,7 @@ namespace app\controllers;
 use yii\rest\Controller;
 use Yii;
 
-class SendController extends Controller
+class HookController extends Controller
 {
     public function actionTb() {
         $rq_params = Yii::$app->requestedParams;
