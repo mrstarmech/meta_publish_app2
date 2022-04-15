@@ -88,6 +88,14 @@ class SiteController extends Controller
         return $this->render('error', ['message' => 'Requested page not found on server', 'name' => '404 Not Found']);
     }
 
+    public function actionTblHook() {
+        $rq_params = Yii::$app->requestedParams;
+        if (isset($rq_params['tbl_click_id'])) {
+            return "https://trc/?click-id=" . $rq_params['tbl_click_id'] . "&name=event_name";
+        }
+        return 'ne OK';
+    }
+
     public function actionOk()
     {
         return 'ok';
