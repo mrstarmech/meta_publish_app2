@@ -27,9 +27,13 @@ $get_date = function($format, $offset = 0) {
 $lmt_gtag = $lmt_gtag_noscript = "";
 $gtid = $tblGetParam("gtgid", false);
 $gtvariant = $tblGetParam("gtgvar", false);
+$tbl_accid = $tblGetParam("accid", false);
 if($gtid) {
     $lmt_gtag = "<!-- Google Tag Manager -->
-    <script>var lmt_variant='$gtvariant';</script>
+    <script>
+        var lmt_variant='$gtvariant';
+        var accid='$tbl_accid';
+    </script>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
