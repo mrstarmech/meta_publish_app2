@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use yii\rest\Controller;
+use yii\web\Controller;
 use Yii;
 
 class HookController extends Controller
