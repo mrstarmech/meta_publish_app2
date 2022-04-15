@@ -42,7 +42,7 @@ class SiteController extends Controller
                         $plurl = parse_url($click->getLandingUrl());
                     }
                     $path = "/../../storage".$plurl["path"];
-                    $query = $plurl["query"];
+                    $query = $plurl["query"].$click->DataClick["campaign"]["campaign_land_tokens"];
                     if($query) {
                         parse_str($query, $query_params);
                     }
