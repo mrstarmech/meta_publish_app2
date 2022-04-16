@@ -40,9 +40,9 @@ class HookController extends Controller
             curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/json", "Content-length: " . strlen($content)));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $tbl_resp = curl_exec($ch);
-            
+            $error = curl_error($ch);
             curl_close($ch);
-            return var_dump($tbl_resp, $content);
+            return var_dump($tbl_resp, $content, $error);
         }
         return 'ne OK';
     }
