@@ -44,7 +44,7 @@ class HookController extends Controller
             $error = curl_error($ch);
             $info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
-            return var_dump($tbl_resp, $content, $error, $info);
+            return $info;
         }
         return 'ne OK';
     }
