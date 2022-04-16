@@ -8,7 +8,7 @@ use Yii;
 class HookController extends Controller
 {
     public function actionTbp() {
-        return var_dump(substr(microtime(true) * 1000, 0, 13));
+        return var_dump(intval(substr(microtime(true) * 1000, 0, 13)));
     }
 
     public function actionTb() {
