@@ -18,7 +18,7 @@ class HookController extends Controller
                 "actions" => [
                     [
                         "click-id" => $rq_params['tbl_click_id'],
-                        "timestamp" => time(),
+                        "timestamp" => intval(substr(microtime(true) * 1000, 0, 13)),
                         "name" => "make_purchase"
                     ]
                 ]
