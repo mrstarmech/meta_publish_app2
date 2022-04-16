@@ -7,7 +7,7 @@ use Yii;
 
 class HookController extends Controller
 {
-    public function actionTb() {
+    public function actionTbp() {
         $rq_params = Yii::$app->request->queryParams;
         if (isset($rq_params['tbl_click_id']) && isset($rq_params['tbl_event_name'])) {
             $url = "https://trc.taboola.com/actions-handler/log/3/s2s-action?click-id=" . $rq_params['tbl_click_id'] . "&name=" . $rq_params['tbl_event_name'];
@@ -22,7 +22,7 @@ class HookController extends Controller
         return 'ne OK';
     }
 
-    public function actionTbp() {
+    public function actionTb() {
         $rq_params = Yii::$app->request->queryParams;
         if (isset($rq_params['tbl_click_id']) && isset($rq_params['tbl_event_name'])) {
             $content = json_encode([
