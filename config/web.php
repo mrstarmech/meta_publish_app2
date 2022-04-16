@@ -73,7 +73,7 @@ $config = [
                 'terms' => 'site/index',
                 'contact' => 'site/index',
                 '<controller:send>/<action:go>' => '<controller>/<action>',
-                '<controller:hook>/<action:tb>' => '<controller>/<action>',
+                '<controller:hook>/<action>' => '<controller>/<action>',
                 '/' => 'site/index',
             ],
         ],
