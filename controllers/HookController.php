@@ -37,6 +37,7 @@ class HookController extends Controller
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://trc.taboola.com/1388223/log/3/bulk-s2s-action');
             curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/json", "Content-length: " . strlen($content)));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $tbl_resp = curl_exec($ch);
