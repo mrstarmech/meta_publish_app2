@@ -13,6 +13,7 @@ class HookController extends Controller
             $url = "https://trc.taboola.com/actions-handler/log/3/s2s-action?click-id=" . $rq_params['tbl_click_id'] . "&name=" . $rq_params['tbl_event_name'];
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+            curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $tbl_resp = curl_exec($ch);
             
