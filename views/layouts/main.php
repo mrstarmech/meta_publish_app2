@@ -31,7 +31,7 @@ VueAsset::register($this);
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <?php $this->head() ?>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7198029652324389" crossorigin="anonymous"></script>
 </head>
 
 <body>
