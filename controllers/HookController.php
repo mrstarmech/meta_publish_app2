@@ -37,4 +37,21 @@ class HookController extends Controller
         }
         return 'ne OK';
     }
+
+    public function actionOb() {
+        $rq_params = Yii::$app->request->queryParams;
+        if (isset($rq_params['ob_click_id']) && isset($rq_params['ob_event_name'])) {
+            $clid = $rq_params['ob_click_id'];
+            $evn = $rq_params['ob_event_name'];
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "https://tr.outbrain.com/unifiedPixel?ob_click_id=$clid&name=$evn");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $ob_resp = curl_exec($ch);
+            $error = curl_error($ch);
+            $info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            return [$info, $error, $ob_resp];
+        }
+        return 'ne OK';
+    }
 }
