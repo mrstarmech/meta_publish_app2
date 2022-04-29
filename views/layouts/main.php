@@ -40,22 +40,7 @@ VueAsset::register($this);
     <?= $content ?>
 
     <?php $this->endBody() ?>
-    <script>
-        function getUrlVars() {
-            var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-                vars[key] = value;
-            });
-            return vars;
-        }
-        var purlvars = getUrlVars();
-        var obpximg = document.createElement('img');
-        obpximg.style.display = "none!important";
-        obpximg.style.width = 0;
-        obpximg.style.height = 0;
-        obpximg.src = 'https://howaboutagoodday.com/hook/ob?ob_click_id=' + purlvars['click_id'] + '&ob_event_name=PAGE_VIEW';
-        document.body.appendChild(obpximg);
-    </script>
+    
 </body>
 
 </html>
