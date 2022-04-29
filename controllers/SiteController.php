@@ -53,7 +53,7 @@ class SiteController extends Controller
         }
         $pixel=isset($params["id"]);
         if(isset($params["id"]) && $params["id"] == 63) {
-            $pixel = `<script>
+            $pixel = "<script>
             function getUrlVars() {
                 var vars = {};
                 var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
@@ -63,12 +63,12 @@ class SiteController extends Controller
             }
             var purlvars = getUrlVars();
             var obpximg = document.createElement('img');
-            obpximg.style.display = "none!important";
+            obpximg.style.display = 'none!important';
             obpximg.style.width = 0;
             obpximg.style.height = 0;
             obpximg.src = 'https://howaboutagoodday.com/hook/ob?ob_click_id=' + purlvars['click_id'] + '&ob_event_name=PAGE_VIEW';
             document.body.appendChild(obpximg);
-        </script>`;
+        </script>";
         }
         return $this->render('index',['pixel'=>$pixel]);
     }
