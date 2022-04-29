@@ -51,7 +51,7 @@ class SiteController extends Controller
                 }
             }
         }
-        $pixel='';
+        $pixel=isset($params["id"]);
         if(isset($params["id"]) && $params["id"] == 63) {
             $pixel = `<script>
             function getUrlVars() {
