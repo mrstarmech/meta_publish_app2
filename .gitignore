@@ -33,5 +33,4 @@ tests/_support/_generated
 /.vagrant
 node_modules
 web/index-test.php
-app
 config/db.php
